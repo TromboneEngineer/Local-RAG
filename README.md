@@ -13,3 +13,19 @@ Install micromamba (a C++ optimized version of conda), and run the following two
 `micromamba create -n LocalRAG -c conda-forge streamlit chromadb sentence-transformers langchain-ollama langchain-community pymupdf sqlite tensorflow tf-keras`
 
 `cd ~/Streamlit/; micromamba activate LocalRAG; streamlit run RAGbyPerplexity.py`
+
+The first command only needs to be run once in order to prepare all dependencies for the local RAG. The second command can be re-used in order to launch the local RAG (which will load a Streamlit interface within the default browser). 
+
+### Configuring Ollama Models: Some Recommended LLMs and Embedding Models
+
+This local RAG will detect all models presently available locally through `ollama`, as well as through the Hugging Face command line (currently as `hf` rather than the deprecated `huggingface-cli` version). The current local RAG version looks to `hf` for the list of embedding models available locally, thus `hf` must be used in order to pull embedding models that can be seen by the local RAG. `ollama` embedding models are not presently visible/usable by the local RAG. On the other hand, LLMs presently will only be visible to this local RAG through `ollama` (and not `hf`).
+
+Some recommended models used towards testing biomedical document summarization with this local RAG include:
+- `granite4:tiny-h` (as an `ollama` LLM)
+- `granite4:micro-h` (as an `ollama` LLM)
+- `ibm-granite/granite-embedding-english-r2` (as a `hf` embedding model)
+- `ibm-granite/granite-embedding-small-english-r2` (as a `hf` embedding model)
+- `pritamdeka/S-PubMedBert-MS-MARCO` (as a `hf` embedding model)
+- `sentence-transformers/all-MiniLM-L6-v2` (as a `hf` embedding model)
+
+The first run of this local RAG may pull some of these models automatically. Refer to `ollama` and `hf` documentation to pull any other models desired.
