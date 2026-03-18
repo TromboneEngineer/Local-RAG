@@ -8,13 +8,13 @@ Available files within this repo include the local RAG Python script, alongside 
 ## Getting Started
 
 ### Assuming an already existing Ollama local installation with at least one LLM available locally
-Install micromamba (a C++ optimized version of conda), and run the following two commands, after placing the main Python script into `~/Streamlit/` (or adjust the path within the recommended command accordingly):
+Install micromamba (a C++ optimized version of conda), and then run the following commands:
 
-`micromamba create -n LocalRAG -c conda-forge streamlit chromadb sentence-transformers langchain-ollama langchain-community pymupdf sqlite tensorflow tf-keras`
+1) `git clone https://github.com/TromboneEngineer/Local-RAG.git`
+2) `micromamba create -n LocalRAGenv -c conda-forge streamlit chromadb sentence-transformers langchain-ollama langchain-community pymupdf sqlite tensorflow tf-keras`
+3) `cd ~/Local-RAG/; micromamba activate LocalRAGenv; streamlit run RAGbyPerplexity.py`
 
-`cd ~/Streamlit/; micromamba activate LocalRAG; streamlit run RAGbyPerplexity.py`
-
-The first command only needs to be run once in order to prepare all dependencies for the local RAG. The second command can be re-used in order to launch the local RAG (which will load a Streamlit interface within the default browser). 
+The first two commands only need to be run once in order to grab the script and prepare all dependencies for the local RAG. The third command can be re-used in order to launch the local RAG (which will load a Streamlit interface within the default browser). 
 
 ### Configuring Ollama Models: Some Recommended LLMs and Embedding Models
 
