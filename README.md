@@ -8,7 +8,7 @@ Available files within this repo include the local RAG Python script, alongside 
 ## Getting Started
 
 ### Assuming an already existing Ollama local installation with at least one LLM available locally
-Install micromamba (a C++ optimized version of conda, [main installation documentation]([url](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html))), and then run the following commands:
+Install micromamba (a C++ optimized version of conda, [main installation documentation](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)), and then run the following commands:
 
 1) `git clone https://github.com/TromboneEngineer/Local-RAG.git`
 2) `micromamba create -n LocalRAGenv -c conda-forge accelerate "chromadb=1.0.20" einops "grpcio=1.67.1" "langchain=0.3.*" langchain-community langchain-ollama matplotlib "opentelemetry-exporter-otlp-proto-grpc=1.37.0" "opentelemetry-proto=1.37.0" "protobuf=5.28.3" psutil pymupdf sentence-transformers sqlite streamlit tensorflow tf-keras`
